@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ super() }} | Application settings{% endblock %}
+
+{% block content %}
+<div class="content">
+
+<form class="settings" method="POST">
+<h1>Flask Newsreader</h1>
+Version: {{ version_number }} ({{ version_date }})<br>
+Author: Jochen Peters
+
+<br>&nbsp;<br>
+
+<h1>General settings</h1>
+<label>Remote access</label><input type="checkbox" name="remote_access" {% if remote_access %}checked{% endif %}><br>
+<label>Auto-update feeds</label><input type="checkbox" name="auto_update" {% if auto_update %}checked{% endif %}>
+
+<br>&nbsp;<br>
+<button class="form" type="reset">Reset</button>
+<button class="form" type="submit" name="action" value="save_settings">Save</button>
+</form>
+
+<br>&nbsp;<br>
+
+<form class="settings" method="POST">
+<h1 id="newsfeeds">News feeds</h1>
+{% for f in feeds %}
+{% set feed_loop = loop %}
+{% if not f['to_remove'] %}
+<label>{{ f['name'] }}</label>
+<select name="position_{{ feed_loop.index0 }}" class="focusable">
+{% for i in range(feeds|length) %}
+<option value="{{ i }}" {% if i == feed_loop.index0 %}Selected{% endif %}>{{ i+1 }}</option>
+{% endfor %}
+</select>
+<input type="url" name="url_{{ feed_loop.index0 }}" pattern="https?://.+" value="{{ f['url'] }}" style="width: 25em">
+<input type="checkbox" name="active_{{ feed_loop.index0 }}" {% if f['active'] %}checked{% endif %}>
+[<button class="linkstyle" type="submit" name="remove_feed" value="{{ feed_loop.index0 }}">remove</button>]
+<br>
+{% endif %}
+{% endfor %}
+
+<h2 id="add_feed">Add feed</h2>
+<input type="text" name="new_name" value="" style="width: 16.2em">
+<input type="url" name="new_url" pattern="https?://.+" value="" style="width: 25em">
+<input type="checkbox" name="new_feed_active" checked>
+[<button class="linkstyle" type="submit" name="action" value="add_feed">add</button>]
+<br>
+
+<br>&nbsp;<br>
+<button class="form" type="submit" name="action" value="save_feedlist">Save feed list</button>
+</form>
+
+</div>
+{% endblock %}
+

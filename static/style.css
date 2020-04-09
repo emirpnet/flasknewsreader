@@ -1,0 +1,224 @@
+/* 
+ * Responsive CSS for Flask Newreader 
+ * Version: 2020-04-05
+ * Author : Jochen Peters
+ */
+
+/* COLOR PALETTE
+ * background: white
+ * text: #56565a
+ * navbar: darkred
+ * hover/focus: blue
+ */
+
+/* Font family (h1-h5, p, ul, ... and pre as a workaround for a common browser bug) */
+body,h1,h2,h3,h4,h5,p,ul,button { font-family: Helvetica,Arial,sans-serif; }
+pre { font-family: monospace; } /* NOT TO BE USED IN RELATIVE */
+
+
+/* Default margins & general things */
+body {
+	margin: 2% 0% 1% 0%;
+	padding: 0%;
+	background: white;
+}
+
+p,pre,form {
+	margin: 0%;
+	padding: 0%;
+}
+
+h1 {
+	margin: 0%;
+	padding: 0%;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+h2 {
+	margin: 0.2em 0%;
+	padding: 1.4em 0em 0em 0em;
+	font-size: 1.0em;
+	font-weight: bold;
+}
+
+h3,h4,h5 {
+	margin: 0.5em 0%;
+	padding: 0%;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: #56565a;
+}
+
+a:hover {
+	color: blue;
+}
+
+/* Header */
+div.header {
+	width: 96%;
+	height: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	padding: 0%;
+	text-align: right;
+	color: #56565a;
+	background: #ffffff;
+	border: none;
+}
+
+div.header img {
+	margin: 5px;
+	border: none;
+}
+
+/* Navigation bar */
+div.nav {
+	width: 96%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+	padding: 0.1em 0.5em 0.1em 0.5em;
+	text-align: left;
+	color: white;
+	background: darkred;
+	border: none;
+}
+
+div.nav p {
+	margin: 2px 0.5em;
+	padding: 0%;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+div.nav a {
+	text-decoration: none;
+	color: white;
+}
+
+div.nav a:hover {
+	color: blue;
+}
+
+
+/* Content */
+div.content {
+	width: 96%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.4em;
+	margin-bottom: 2em;
+	padding: 0%;
+	text-align: left;
+	color: #56565a;
+	background: white;
+	border: none;
+	font-size: 1.2em;
+	font-weight: normal;
+}
+
+div.content hr {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 0%;
+	color: lightgray;
+}
+
+div.content .column {
+	float: left;
+}
+
+.content:after {
+	clear: both;
+}
+
+
+/* Forms */
+label {
+	float: left;
+	width: 12em;
+	text-align: left;
+	margin-right: 0.5em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+input {
+	font-size: 0.9em;
+}
+
+button.form {
+	margin: 0.4em% 1%;
+	padding: 0.5em 2em;
+	font-size: 1em;
+	font-weight: normal;
+	text-align: center;
+	text-decoration: none;
+	color: #56565a;
+	background: lightgray;
+	border: none;
+}
+
+button.form:hover {
+	background: blue;
+	color: white;
+}
+
+button.linkstyle {
+	background: none!important;
+	padding: 0!important;
+	border: none;
+	font-size: 1em;
+	font-weight: normal;
+	color: #56565a;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+button.linkstyle:hover {
+	color: blue;
+}
+
+/* Spatial navigation */
+a:focus {
+	outline: 0px;
+	color: blue;
+}
+
+div.nav a:focus {
+	outline: 0px;
+	color: blue;
+}
+
+div.nav:focus {
+	outline: 0px;
+	color: blue;
+}
+
+button.form:focus {
+	outline: 0px;
+	background: blue;
+	color: white;
+}
+
+button.linkstyle:focus {
+	outline: 0px;
+	color: blue;
+}
+
+button::-moz-focus-inner {
+   border: 0;
+}
+

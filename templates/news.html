@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ super() }} | News{% endblock %}
+
+{% block content %}
+<div class="content">
+
+<div class="column" style="width: 22%">
+{% for f in feeds %}
+{% if f['active'] %}
+<a href="/news?feed={{ loop.index0 }}" class="focusable">{{ f['name'] }}</a><br>
+{% endif %}
+{% endfor %}
+</div>
+
+<div class="column" style="width: 78%">
+<h1>{{ feeds[feed_idx]['name'] }}</h1>
+<p>{{ feeds[feed_idx]['news']|length if feeds[feed_idx]['news'] is not none else "0" }} items, updated at {{ feeds[feed_idx]['updated'] }} [<a href="reload?feed={{ feed_idx }}" class="focusable" style="text-decoration: underline">reload</a>]</p>
+
+{% if feeds[feed_idx]['news'] is not none %}
+{% set first = True %}
+{% for n in feeds[feed_idx]['news'] %}
+{% if not first %}
+<hr>
+{% endif %}
+<h2><a href="{{ n['link'] }}" class="focusable" target="_blank" rel="noopener noreferrer">{{ n['title'] }}</a></h2>
+<p>{{ n['summary'] }}</p>
+{% set first = False %}
+{% endfor %}
+{% endif %}
+</div>
+
+</div>
+{% endblock %}
+

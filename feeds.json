@@ -1,0 +1,124 @@
+{
+"feeds": [
+{
+"active": true,
+"url": "https://www.tagesschau.de/xml/atom",
+"name": "Tagesschau.de"
+},
+{
+"active": true,
+"url": "http://rss.dw.com/atom/rss-de-top",
+"name": "Deutsche Welle"
+},
+{
+"active": false,
+"url": "http://rss.dw.com/atom/rss-de-all",
+"name": "Deutsche Welle (all)"
+},
+{
+"active": false,
+"url": "http://rss.dw.com/atom/rss-en-world",
+"name": "Deutsche Welle (world)"
+},
+{
+"active": false,
+"url": "https://www.handelsblatt.com/contentexport/feed/top-themen/",
+"name": "Handelsblatt.com"
+},
+{
+"active": true,
+"url": "https://www.faz.net/rss/aktuell/",
+"name": "FAZ.NET"
+},
+{
+"active": false,
+"url": "https://www.spiegel.de/index.rss",
+"name": "spiegel.de (Nachrichten)"
+},
+{
+"active": false,
+"url": "https://www.spiegel.de/schlagzeilen/index.rss",
+"name": "spiegel.de (Schlagzeilen)"
+},
+{
+"active": true,
+"url": "https://www.n-tv.de/rss",
+"name": "n-tv.de"
+},
+{
+"active": true,
+"url": "https://www.nzz.ch/startseite.rss",
+"name": "NZZ (Startseite)"
+},
+{
+"active": false,
+"url": "https://www.nzz.ch/recent.rss",
+"name": "NZZ (Neueste Artikel)"
+},
+{
+"active": false,
+"url": "https://www.nzz.ch/international.rss",
+"name": "NZZ (International)"
+},
+{
+"active": false,
+"url": "http://feeds.bbci.co.uk/news/rss.xml",
+"name": "BBC (Top Stories)"
+},
+{
+"active": true,
+"url": "http://feeds.bbci.co.uk/news/world/rss.xml",
+"name": "BBC (World)"
+},
+{
+"active": true,
+"url": "https://www.japantimes.co.jp/feed/topstories",
+"name": "Japan Times (Top Stories)"
+},
+{
+"active": false,
+"url": "https://www.japantimes.co.jp/news/feed/",
+"name": "Japan Times (Latest News)"
+},
+{
+"active": true,
+"url": "http://rss.kicker.de/news/aktuell",
+"name": "kicker.de"
+},
+{
+"active": true,
+"url": "https://www.heise.de/rss/heise-atom.xml",
+"name": "heise online News"
+},
+{
+"active": true,
+"url": "https://netzpolitik.org/feed/",
+"name": "Netzpolitik.org"
+},
+{
+"active": true,
+"url": "http://feeds.arstechnica.com/arstechnica/index/",
+"name": "Ars Technica"
+},
+{
+"active": true,
+"url": "https://ourworldindata.org/atom.xml",
+"name": "Our World in Data"
+},
+{
+"active": true,
+"url": "https://www.xkcd.com/atom.xml",
+"name": "xkcd.com"
+},
+{
+"active": true,
+"url": "https://www.euwid-moebel.de/index.php?id=55&type=100",
+"name": "euwid Moebel"
+},
+{
+"active": true,
+"url": "https://www.bad-lippspringe.de/bali/aktuelles/rss.php",
+"name": "Stadt Bad Lippspringe"
+}
+]
+}
