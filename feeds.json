@@ -102,6 +102,12 @@
 "fid": "716a8d1c3f971dcb10361b03565bce63"
 },
 {
+"name": "Harvard Business Review",
+"url": "http://feeds.hbr.org/harvardbusiness",
+"active": true,
+"fid": "1479626ef8ef423638ca62f43b3e0f8d"
+},
+{
 "url": "https://www.heise.de/rss/heise-atom.xml",
 "name": "heise online News",
 "active": true,
