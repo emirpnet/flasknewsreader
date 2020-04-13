@@ -16,10 +16,10 @@
 <link type="text/css" rel="stylesheet" media="(min-width:790px)" href="style_fixed.css">
 //-->
 
-<link type="text/css" rel="stylesheet" href="/static/style.css">
+<link type="text/css" rel="stylesheet" href="/news/static/style.css">
 
 <!-- START: spatial-navigation.js //-->
-<script src="/static/spatial_navigation.js"></script>
+<script src="/news/static/spatial_navigation.js"></script>
 <script>
 	window.addEventListener('load', function() {
 		SpatialNavigation.init(); // initialize
@@ -40,7 +40,7 @@
 <!-- START: header //-->
 <div class="nav"><p>
 <h1>Flask Newsreader</h1>
-{% block nav %}<a href="/news" class="focusable">News</a> | <a href="/settings" class="focusable">Settings</a>{% endblock %}
+{% block nav %}<a href="/news" class="focusable">News</a> | <a href="/news/settings" class="focusable">Settings</a>{% endblock %}
 </p></div>
 <!-- END: header //-->
 

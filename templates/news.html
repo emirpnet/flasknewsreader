@@ -17,7 +17,7 @@
 {% set feed = feeds[feed_idx] %}
 {% set news = news[feed['fid']] %}
 <h1>{{ feeds[feed_idx]['name'] }}</h1>
-<p>{{ news|length if news is not none else "0" }} items, updated at {{ feed['updated'] }} [<a href="reload?feed={{ feed_idx }}" class="focusable" style="text-decoration: underline">reload</a>]</p>
+<p>{{ news|length if news is not none else "0" }} items, updated at {{ feed['updated'] }} [<a href="/news/reload?feed={{ feed_idx }}" class="focusable" style="text-decoration: underline">reload</a>]</p>
 
 {% if news is not none %}
 {% set first = True %}
