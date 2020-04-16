@@ -1,11 +1,11 @@
 # newsfeed2json.py
-# Version: 0.8 (2020-04-10)
+# Version: 0.9 (2020-04-16)
 # Author: Jochen Peters
 
 import sys
 import re
 import json
-import urllib.request
+import requests
 import xml.etree.ElementTree as etree
 from hashlib import md5
 
@@ -13,12 +13,10 @@ from hashlib import md5
 def load_newsfeed(url):
 	''' Request XML feed via HTTP and return as string '''
 	try:
-		fp = urllib.request.urlopen(url)
-		xmlstring = fp.read().decode('utf-8')
-		fp.close()
-		return xmlstring
+		page = requests.get(url)
+		page.encoding = page.apparent_encoding
+		return page.text
 	except:
-		fp.close()
 		return None
 
 
