@@ -2,6 +2,10 @@
 
 {% block title %}{{ super() }} | Application settings{% endblock %}
 
+{% block add_to_navbar %}
+<li><a href="/news">&gt; Back to news &lt;</a></li>
+{% endblock %}
+
 {% block content %}
 <div class="content">
 
@@ -29,7 +33,7 @@ Author: Jochen Peters
 {% set feed_loop = loop %}
 {% if not f['to_remove'] %}
 <label>{{ f['name'] }}</label>
-<select name="position_{{ feed_loop.index0 }}" class="focusable">
+<select name="position_{{ feed_loop.index0 }}">
 {% for i in range(feeds|length) %}
 <option value="{{ i }}" {% if i == feed_loop.index0 %}Selected{% endif %}>{{ i+1 }}</option>
 {% endfor %}
