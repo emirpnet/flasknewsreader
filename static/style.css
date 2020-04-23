@@ -1,6 +1,6 @@
 /* 
  * CSS for Flask Newreader 
- * Version: 2020-04-20
+ * Version: 2020-04-21
  * Author : Jochen Peters
  */
 
@@ -60,41 +60,28 @@ h3,h4,h5 {
 }
 
 
-/* Header */
-div.header {
-	width: 96%;
-	height: 60px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0;
-	margin-bottom: 0;
-	padding: 0;
-	text-align: right;
-	color: #56565a;
-	background: #ffffff;
-	border: none;
-}
-
-div.header img {
-	margin: 5px;
-	border: none;
-}
-
-
 /* Navigation bar */
 .navbar {
-	width: 100%;
+	height: 100%;
+	width: 220px;
 	margin: 0 0 1.5em 0;
 	padding: 0 0.6em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	overflow-x: hidden;
 	color: white;
 	background: darkred;
 	border: none;
-	position: sticky;
-	top: 0;
 }
 
 .navbar label, #hamburger {
 	display: none; /* hide hamburger menu */
+}
+
+.navbar ul.navlinks {
+	display: block; /* show navlinks */
 }
 
 .navbar h1 {
@@ -111,7 +98,8 @@ div.header img {
 }
 
 .navbar ul li {
-	display: inline-block;
+	display: block;
+	border-top: 1px solid #333333;
 	margin: 0;
 	padding: 1em;
 	box-sizing: border-box;
@@ -128,55 +116,10 @@ div.header img {
 	text-decoration: none;
 }
 
-@media screen and (max-width: 768px) { /* on small screens */
-	.navbar {
-		padding: 1em 0;
-	}
-
-	.navbar label { /* show hamburger */
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 1.5em;
-		height: 1.5em;
-		margin: 0;
-		padding: 0.5em;
-		display: inline-block;
-		color: white;
-		background: #333333;
-		font-size: 1.5em;
-		font-style: normal;
-		text-align: center;
-	}
-
-	.navbar h1 {
-		margin: 0 3em;
-		padding: 0 0.6em;
-	}
-
-	.navbar ul li {
-		display: block;
-		border-top: 1px solid #333333;
-		background: #333333;
-	}
-
-	/* show/hide menu on checkbox click */
-	.navbar ul {
-		display: none;
-	}
-	.navbar input:checked ~ ul {
-		display: block;
-	}
-}
-
 
 /* Content */
 div.content {
-	width: 96%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0.4em;
-	margin-bottom: 2em;
+	margin: 2em 1em 2em 270px; /* margin-left corresponds to navbar width */
 	padding: 0;
 	text-align: left;
 	color: #56565a;
@@ -246,5 +189,59 @@ button.linkstyle {
 
 button.linkstyle:hover {
 	color: blue;
+}
+
+
+@media screen and (max-width: 1201px) { /* on small screens */
+	div.content {
+		margin: 2em 1em 2em 1em;
+		padding: 0;
+	}
+
+	.navbar {
+		height: 100%;
+		width: 100%;
+		margin: 0 0 1.0em 0;
+		padding: 0.6em 0;
+		position: sticky;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		color: white;
+		background: darkred;
+		border: none;
+	}
+
+	.navbar label { /* show hamburger */
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1.5em;
+		height: 1.5em;
+		margin: 0;
+		padding: 0.4em;
+		display: inline-block;
+		color: white;
+		background: #333333;
+		font-size: 1.4em;
+		font-style: normal;
+		text-align: center;
+	}
+
+	.navbar ul.navlinks {
+		display: none;
+	}
+
+	.navbar h1 {
+		margin: 0 3em;
+		padding: 0 0.6em;
+	}
+
+	.navbar ul li {
+		display: block;
+		border-top: 1px solid #333333;
+		background: #333333;
+	}
+
 }
 
