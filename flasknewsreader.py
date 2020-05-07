@@ -4,6 +4,7 @@
 
 
 from flask import Flask, Blueprint, render_template, request, redirect
+from flask_login import login_required
 from datetime import datetime
 from operator import itemgetter
 from shutil import copyfile
@@ -19,7 +20,7 @@ except:
 
 # Parameters and settings
 VERSION_INFO = {
-	'version_number': '0.61',
+	'version_number': '0.7',
 	'version_date': '2020-04-13'
 }
 MAX_NUM_FEEDS = 50
@@ -165,6 +166,7 @@ def news_reload():
 
 
 @fnr_bp.route('/news/settings', methods=['POST','GET'])
+@login_required
 def news_settings():
 	load_app_status()
 
