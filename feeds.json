@@ -3,13 +3,14 @@
 "url": "https://www.tagesschau.de/xml/atom",
 "name": "Tagesschau.de",
 "active": true,
-"fid": "933a14db2990d5500d26b250fccf3896"
+"fid": "933a14db2990d5500d26b250fccf3896",
+"updated": "2020-05-24 06:39:49"
 },
 {
 "url": "http://rss.dw.com/atom/rss-de-top",
 "name": "Deutsche Welle",
 "fid": "501b57a311b38a154cce94d134f93393",
-"active": true
+"active": false
 },
 {
 "url": "http://rss.dw.com/atom/rss-de-all",
@@ -27,13 +28,49 @@
 "url": "https://www.handelsblatt.com/contentexport/feed/top-themen/",
 "name": "Handelsblatt.com",
 "fid": "2db07d4239439fa7a50911ad2dc6b492",
-"active": false
+"active": true
 },
 {
 "url": "https://www.faz.net/rss/aktuell/",
 "name": "FAZ.NET",
 "fid": "6b1442f56e91b6b9d556728f08856464",
 "active": true
+},
+{
+"url": "https://www.n-tv.de/rss",
+"name": "n-tv.de",
+"fid": "390a57640c2613653000729c6fef53ae",
+"active": true
+},
+{
+"name": "welt.de (Schlagzeilen)",
+"url": "https://www.welt.de/feeds/topnews.rss",
+"active": false,
+"fid": "769602d797836f7a7ee172da122b224e"
+},
+{
+"name": "welt.de (Neueste Artikel)",
+"url": "https://www.welt.de/feeds/latest.rss",
+"active": false,
+"fid": "b77f117528bd56bce2ef9bc6ab3d0d01"
+},
+{
+"name": "welt.de (Wirtschaft)",
+"url": "https://www.welt.de/feeds/section/wirtschaft.rss",
+"active": false,
+"fid": "f63c9f435a6e04f5d801e04b206d4b9d"
+},
+{
+"name": "welt.de (Wissen)",
+"url": "https://www.welt.de/feeds/section/wissenschaft.rss",
+"active": false,
+"fid": "0c9c98531eb74335b4d83345e34e55a3"
+},
+{
+"name": "welt.de (Sport)",
+"url": "https://www.welt.de/feeds/section/sport.rss",
+"active": false,
+"fid": "ea25626bb1c85573b55ca9c3c1449958"
 },
 {
 "url": "https://www.spiegel.de/index.rss",
@@ -48,16 +85,16 @@
 "fid": "8d261eaa853f24de8d0ae8a14ade63f7"
 },
 {
-"url": "https://www.n-tv.de/rss",
-"name": "n-tv.de",
-"fid": "390a57640c2613653000729c6fef53ae",
-"active": true
+"name": "Tichys Einblick",
+"url": "https://www.tichyseinblick.de/feed/",
+"active": false,
+"fid": "db6b7050636aa1a0c947350e75078dd7"
 },
 {
 "url": "https://www.nzz.ch/startseite.rss",
 "name": "NZZ (Startseite)",
 "fid": "7cfae5a1dc1abdb77a901d39675cba03",
-"active": true
+"active": false
 },
 {
 "url": "https://www.nzz.ch/recent.rss",
@@ -68,7 +105,7 @@
 {
 "url": "https://www.nzz.ch/international.rss",
 "name": "NZZ (International)",
-"active": false,
+"active": true,
 "fid": "a8586eec01e88b5f473469c7afaa0967"
 },
 {
@@ -86,7 +123,7 @@
 {
 "url": "https://www.japantimes.co.jp/feed/topstories",
 "active": true,
-"name": "Japan Times (Top Stories)",
+"name": "Japan Times",
 "fid": "b58f3270ed4a1d2745167a7f2f6d0d42"
 },
 {
@@ -102,7 +139,7 @@
 "fid": "716a8d1c3f971dcb10361b03565bce63"
 },
 {
-"name": "Harvard Business Review",
+"name": "HBR",
 "url": "http://feeds.hbr.org/harvardbusiness",
 "active": true,
 "fid": "1479626ef8ef423638ca62f43b3e0f8d"
@@ -128,7 +165,7 @@
 {
 "url": "https://ourworldindata.org/atom.xml",
 "name": "Our World in Data",
-"active": true,
+"active": false,
 "fid": "0c381cc56b67ebb7f37bf34fcdc392f0"
 },
 {
@@ -142,6 +179,18 @@
 "name": "euwid Moebel",
 "active": true,
 "fid": "b7f643ba55f64ece623584f648c37c18"
+},
+{
+"name": "moebelkultur.de",
+"url": "https://emirpnet.eu.pythonanywhere.com/scrape2rss_moebelkulturde",
+"active": true,
+"fid": "12904e79021760ffc0f94c1044909b53"
+},
+{
+"name": "moebelmarkt.de",
+"url": "https://www.moebelmarkt.de/rss.xml",
+"active": true,
+"fid": "e5e4b9b239e88a5884f361cff62bef1e"
 },
 {
 "url": "https://www.bad-lippspringe.de/bali/aktuelles/rss.php",
