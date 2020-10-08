@@ -10,7 +10,7 @@ from operator import itemgetter
 from shutil import copyfile
 import json
 import os
-import logging
+#import logging
 
 try:
 	from lib.newsfeed2json import load_newsfeed, parse_news, create_feed_id, is_valid_url
@@ -20,8 +20,8 @@ except:
 
 # Parameters and settings
 VERSION_INFO = {
-	'version_number': '0.7',
-	'version_date': '2020-04-13'
+	'version_number': '0.71',
+	'version_date': '2020-10-08'
 }
 MAX_NUM_FEEDS = 50
 FEEDLIST_FILENAME = 'feeds.json'
@@ -34,7 +34,7 @@ APPSETTINGS_DEFAULT = {
 
 
 # Globals
-logger = logging.getLogger(__name__)
+#logger = logging.getLogger(__name__)
 fnr_bp = Blueprint('flasknewsreader', __name__, template_folder='templates', static_folder='static', static_url_path='/news/static')
 fnr_bp.appsettings = {}
 fnr_bp.feeds = {}
@@ -52,7 +52,7 @@ def load_app_status():
 	try:
 		fnr_bp.appsettings = load_from_json(APPSETTINGS_FILENAME)
 	except:
-		logger.warning('Error loading application settings from ' + APPSETTINGS_FILENAME + ', restoring default settings.')
+		#logger.warning('Error loading application settings from ' + APPSETTINGS_FILENAME + ', restoring default settings.')
 		fnr_bp.appsettings = APPSETTINGS_DEFAULT
 		save_to_json(fnr_bp.appsettings, APPSETTINGS_FILENAME, False)
 
@@ -61,7 +61,7 @@ def load_app_status():
 	try:
 		fnr_bp.feeds = load_from_json(FEEDLIST_FILENAME)
 	except:
-		logger.error('Error loading feedlist from ' + APPSETTINGS_FILENAME)
+		#logger.error('Error loading feedlist from ' + APPSETTINGS_FILENAME)
 		fnr_bp.feeds = {}
 
 	# load news items
@@ -69,7 +69,7 @@ def load_app_status():
 	try:
 		fnr_bp.news = load_from_json(NEWS_FILENAME)
 	except:
-		logger.warning('Error loading news items from ' + NEWS_FILENAME)
+		#logger.warning('Error loading news items from ' + NEWS_FILENAME)
 		fnr_bp.news = {}
 
 
@@ -91,7 +91,7 @@ def save_to_json(dictionary, filename, create_backup=True):
 		try:
 			copyfile(filename, filename+'~')
 		except:
-			logger.warning('Could not create backup of ' + filename)
+			pass #logger.warning('Could not create backup of ' + filename)
 
 	# write json-file
 	try:
@@ -99,7 +99,7 @@ def save_to_json(dictionary, filename, create_backup=True):
 			json.dump(dictionary, f, indent=0, separators=(',', ': '))
 			#logger.info(filename + ' written.')
 	except:
-		logger.error('Error writing ' + filename)
+		pass #logger.error('Error writing ' + filename)
 
 
 def fetch_news(feed):
@@ -171,7 +171,7 @@ def news_settings():
 	load_app_status()
 
 	if request.method == 'GET':
-		return render_template('settings.html', feeds=fnr_bp.feeds, **fnr_bp.appsettings, **VERSION_INFO)
+		return render_template('news_settings.html', feeds=fnr_bp.feeds, **fnr_bp.appsettings, **VERSION_INFO)
 
 	elif request.method == 'POST':
 
@@ -246,9 +246,9 @@ def news_settings():
 				}
 				f['fid'] = create_feed_id(f)
 				fnr_bp.feeds.append(f)
-				logger.info('Feed ' + f['fid'] + ': \'' + f['name'] + '\' (' + f['url'] + ') added.')
+				#logger.info('Feed ' + f['fid'] + ': \'' + f['name'] + '\' (' + f['url'] + ') added.')
 			else:
-				logger.warning('Maximum number of feeds reached, submit of new feed was ignored.')
+				pass #logger.warning('Maximum number of feeds reached, submit of new feed was ignored.')
 
 			# save and return
 			save_app_status()
@@ -260,7 +260,7 @@ def news_settings():
 				return redirect('/news/settings#newsfeeds')
 
 			f = fnr_bp.feeds.pop(feed_idx)
-			logger.info('Feed ' + f['fid'] + ': \'' + f['name'] + '\' (' + f['url'] + ') removed.')
+			#logger.info('Feed ' + f['fid'] + ': \'' + f['name'] + '\' (' + f['url'] + ') removed.')
 
 			# remove news items of the feed
 			fnr_bp.news.pop(f['fid'], None)
