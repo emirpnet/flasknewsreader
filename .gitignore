@@ -1,36 +1,7 @@
-# java specific
-*.class
-
-# rust specific
-#Cargo.lock
-/target/
-**/*.rs.bk
+# general
+.env
+*.log
 
 # python specifiv
 __pycache__/
-
-# ant specific
-dist/
-build/
-
-# netbeans specific
-core
-nbproject/*
-!nbproject/project.properties
-!nbproject/project.xml
-nbbuild/
-nbdist/
-nbactions.xml
-nb-configuration.xml
-
-# log files
-*.log
-
-# package files
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
 
