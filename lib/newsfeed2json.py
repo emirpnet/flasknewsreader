@@ -1,5 +1,5 @@
 # newsfeed2json.py
-# Version: 0.9 (2020-04-16)
+# Version: 0.9.1 (2022-05-16)
 # Author: Jochen Peters
 
 import sys
@@ -64,7 +64,7 @@ def extract_attrib(element, aname):
 def parse_atomfeed(atomfeed, remove_tags, max_entries):
 	''' Parse atom feed from XML string and return news as list of dictionaries '''
 	
-	xmltree = etree.ElementTree(etree.fromstring(atomfeed))
+	xmltree = etree.ElementTree(etree.fromstring(atomfeed.strip()))
 	root = xmltree.getroot()
 	entries = root.findall('{http://www.w3.org/2005/Atom}entry')
 	
@@ -96,7 +96,7 @@ def parse_atomfeed(atomfeed, remove_tags, max_entries):
 def parse_rss2feed(rssfeed, remove_tags, max_entries):
 	''' Parse RSS2.0 feed from XML string and return news as list of dictionaries '''
 	
-	xmltree = etree.ElementTree(etree.fromstring(rssfeed))
+	xmltree = etree.ElementTree(etree.fromstring(rssfeed.strip()))
 	root = xmltree.getroot()
 	channel = root.find('channel')
 	items = channel.findall('item')
